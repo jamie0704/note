@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>筆記共享平台</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Highlight.js CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.8.0/styles/github.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">筆記共享平台</a>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        筆記列表
+                        <button class="btn btn-sm btn-primary float-end" id="newNoteBtn">新增筆記</button>
+                    </div>
+                    <div class="card-body">
+                        <div id="notesList" class="list-group">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <input type="text" id="noteTitle" class="form-control w-50" placeholder="筆記標題">
+                            <div>
+                                <button class="btn btn-success" id="saveBtn">儲存</button>
+                                <button class="btn btn-info" id="shareBtn">分享</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row mb-3">
+                            <div class="col">
+                                <div class="btn-group" role="group">
+                                    <button class="btn btn-outline-secondary active" id="editBtn">編輯</button>
+                                    <button class="btn btn-outline-secondary" id="previewBtn">預覽</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="editorArea">
+                            <textarea id="noteContent" class="form-control" rows="15" placeholder="在此輸入筆記內容（支援 Markdown 格式）"></textarea>
+                        </div>
+                        <div id="previewArea" class="markdown-body d-none">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for sharing -->
+    <div class="modal fade" id="shareModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">分享筆記</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>複製以下連結來分享您的筆記：</p>
+                    <div class="input-group">
+                        <input type="text" id="shareLink" class="form-control" readonly>
+                        <button class="btn btn-outline-secondary" id="copyBtn">複製</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked@4.3.0/marked.min.js"></script>
+    <!-- Highlight.js for code syntax highlighting -->
+    <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.8.0/lib/highlight.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+.markdown-body {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+#noteContent {
+    resize: vertical;
+    min-height: 300px;
+}
+
+.list-group-item {
+    cursor: pointer;
+}
+
+.list-group-item:hover {
+    background-color: #f8f9fa;
+}
+
+.list-group-item.active {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+#previewArea {
+    min-height: 300px;
+}
+
+#previewArea img {
+    max-width: 100%;
+}
+
+#previewArea pre {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+#previewArea code {
+    background-color: #f8f9fa;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
